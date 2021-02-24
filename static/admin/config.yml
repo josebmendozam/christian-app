@@ -712,7 +712,7 @@ collections:
             required: true
             default: projects
   - name: projects
-    label: Projects
+    label: Projects (posts)
     folder: src/pages/projects
     create: true
     extension: md
