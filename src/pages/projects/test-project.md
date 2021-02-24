@@ -1,8 +1,6 @@
 ---
 title: PROJECT test
-subtitle: >-
-  Apparently, Japan is covered in magical and irresistibly cute animal
-  sanctuaries.
+subtitle: project
 date: "2020-01-25"
 thumb_img_path: images/apple_wallpaper.png
 thumb_img_alt: A red fox sitting on a meadow
