@@ -370,347 +370,6 @@ collections:
             label: Template
             required: true
             default: home
-  - name: project
-    label: Projects (page)
-    files:
-      - name: project
-        label: Projects
-        file: src/pages/projects.md
-        fields:
-          - widget: string
-            name: title
-            label: Title
-            required: true
-            hint: The title of the page
-          - widget: boolean
-            name: has_more_link
-            label: Show keep reading link
-            required: false
-            default: true
-            hint: Display the keep reading link in the post feed
-          - widget: string
-            name: more_link_text
-            label: Keep reading link label
-            required: false
-          - widget: object
-            name: seo
-            label: Seo
-            required: false
-            fields:
-              - widget: string
-                name: title
-                label: Title
-                required: false
-                default: ""
-                hint: The page title that goes into the <title> tag
-              - widget: string
-                name: description
-                label: Description
-                required: false
-                default: ""
-                hint: >-
-                  The page description that goes into the <meta
-                  name="description"> tag
-              - widget: list
-                name: robots
-                label: Robots
-                required: false
-                hint: The items that go into the <meta name="robots"> tag
-                field:
-                  label: Select
-                  name: select
-                  widget: select
-                  options:
-                    - all
-                    - index
-                    - follow
-                    - noindex
-                    - nofollow
-                    - noimageindex
-                    - notranslate
-                    - none
-              - widget: list
-                name: extra
-                label: Extra
-                required: false
-                hint: >-
-                  Additional definition for specific meta tags such as
-                  open-graph, twitter, etc.
-                fields:
-                  - widget: string
-                    name: name
-                    label: Name
-                    required: false
-                    default: ""
-                  - widget: string
-                    name: value
-                    label: Value
-                    required: false
-                    default: ""
-                  - widget: string
-                    name: keyName
-                    label: Key Name
-                    required: false
-                    default: name
-                  - widget: boolean
-                    name: relativeUrl
-                    label: Relative Url
-                    required: false
-              - widget: hidden
-                name: type
-                label: Object Type
-                required: true
-                hint: The type of the object
-                default: stackbit_page_meta
-          - widget: hidden
-            name: template
-            label: Template
-            required: true
-            default: projects
-  - name: page
-    label: Other pages
-    folder: src/pages
-    create: true
-    extension: md
-    identifier_field: title
-    slug: "{{slug}}"
-    summary: "{{title}}"
-    fields:
-      - widget: string
-        name: title
-        label: Title
-        required: true
-        hint: The title of the page
-      - widget: string
-        name: subtitle
-        label: Subtitle
-        required: false
-        hint: The text shown just below the page title
-      - widget: image
-        name: img_path
-        label: Background Image
-        required: false
-        hint: >-
-          The background image of the left side. If no image added, the default
-          image specified in Header Configuration is displayed.
-      - widget: object
-        name: seo
-        label: Seo
-        required: false
-        fields:
-          - widget: string
-            name: title
-            label: Title
-            required: false
-            default: ""
-            hint: The page title that goes into the <title> tag
-          - widget: string
-            name: description
-            label: Description
-            required: false
-            default: ""
-            hint: >-
-              The page description that goes into the <meta name="description">
-              tag
-          - widget: list
-            name: robots
-            label: Robots
-            required: false
-            hint: The items that go into the <meta name="robots"> tag
-            field:
-              label: Select
-              name: select
-              widget: select
-              options:
-                - all
-                - index
-                - follow
-                - noindex
-                - nofollow
-                - noimageindex
-                - notranslate
-                - none
-          - widget: list
-            name: extra
-            label: Extra
-            required: false
-            hint: >-
-              Additional definition for specific meta tags such as open-graph,
-              twitter, etc.
-            fields:
-              - widget: string
-                name: name
-                label: Name
-                required: false
-                default: ""
-              - widget: string
-                name: value
-                label: Value
-                required: false
-                default: ""
-              - widget: string
-                name: keyName
-                label: Key Name
-                required: false
-                default: name
-              - widget: boolean
-                name: relativeUrl
-                label: Relative Url
-                required: false
-          - widget: hidden
-            name: type
-            label: Object Type
-            required: true
-            hint: The type of the object
-            default: stackbit_page_meta
-      - widget: hidden
-        name: template
-        label: Template
-        required: true
-        default: page
-      - widget: markdown
-        name: body
-        label: Content
-        required: false
-        hint: Page content
-    filter:
-      field: template
-      value: page
-  - name: projects
-    label: Projects (posts)
-    folder: src/pages/projects
-    create: true
-    extension: md
-    identifier_field: title
-    slug: "{{slug}}"
-    summary: "{{title}}"
-    fields:
-      - widget: string
-        name: title
-        label: Title
-        required: true
-        hint: The title of the project
-      - widget: string
-        name: subtitle
-        label: Subtitle
-        required: false
-        hint: The text shown just below the project title
-      - widget: date
-        name: date
-        label: Date
-        required: true
-      - widget: image
-        name: thumb_img_path
-        label: Image (Blog Feed)
-        required: false
-        hint: The image shown in the blog feed
-      - widget: string
-        name: thumb_img_alt
-        label: Image Alt Text (Blog Feed)
-        required: false
-        hint: The alt text of the blog feed image
-      - widget: image
-        name: content_img_path
-        label: Background Image (Single Project)
-        required: false
-        hint: >-
-          The background image of the left side in the single project. If no image
-          added, the default image specified in Header Configuration is
-          displayed.
-      - widget: string
-        name: excerpt
-        label: Excerpt
-        required: false
-        hint: The excerpt of the project displayed in the feed
-      - widget: boolean
-        name: hide_header
-        label: Hide sidebar
-        required: false
-        default: false
-        hint: Hide the left side in the single project
-      - widget: object
-        name: seo
-        label: Seo
-        required: false
-        fields:
-          - widget: string
-            name: title
-            label: Title
-            required: false
-            default: ""
-            hint: The page title that goes into the <title> tag
-          - widget: string
-            name: description
-            label: Description
-            required: false
-            default: ""
-            hint: >-
-              The page description that goes into the <meta name="description">
-              tag
-          - widget: list
-            name: robots
-            label: Robots
-            required: false
-            hint: The items that go into the <meta name="robots"> tag
-            field:
-              label: Select
-              name: select
-              widget: select
-              options:
-                - all
-                - index
-                - follow
-                - noindex
-                - nofollow
-                - noimageindex
-                - notranslate
-                - none
-          - widget: list
-            name: extra
-            label: Extra
-            required: false
-            hint: >-
-              Additional definition for specific meta tags such as open-graph,
-              twitter, etc.
-            fields:
-              - widget: string
-                name: name
-                label: Name
-                required: false
-                default: ""
-              - widget: string
-                name: value
-                label: Value
-                required: false
-                default: ""
-              - widget: string
-                name: keyName
-                label: Key Name
-                required: false
-                default: name
-              - widget: boolean
-                name: relativeUrl
-                label: Relative Url
-                required: false
-          - widget: hidden
-            name: type
-            label: Object Type
-            required: true
-            hint: The type of the object
-            default: stackbit_page_meta
-      - widget: hidden
-        name: template
-        label: Template
-        required: true
-        default: project
-      - widget: markdown
-        name: body
-        label: Content
-        required: false
-        hint: Page content
-    filter:
-      field: template
-      value: project
   - name: post
     label: Blog (posts)
     folder: src/pages/posts
@@ -846,3 +505,344 @@ collections:
     filter:
       field: template
       value: post
+  - name: project
+    label: Projects (page)
+    files:
+      - name: project
+        label: Projects
+        file: src/pages/projects.md
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: The title of the page
+          - widget: boolean
+            name: has_more_link
+            label: Show keep reading link
+            required: false
+            default: true
+            hint: Display the keep reading link in the post feed
+          - widget: string
+            name: more_link_text
+            label: Keep reading link label
+            required: false
+          - widget: object
+            name: seo
+            label: Seo
+            required: false
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                default: ""
+                hint: The page title that goes into the <title> tag
+              - widget: string
+                name: description
+                label: Description
+                required: false
+                default: ""
+                hint: >-
+                  The page description that goes into the <meta
+                  name="description"> tag
+              - widget: list
+                name: robots
+                label: Robots
+                required: false
+                hint: The items that go into the <meta name="robots"> tag
+                field:
+                  label: Select
+                  name: select
+                  widget: select
+                  options:
+                    - all
+                    - index
+                    - follow
+                    - noindex
+                    - nofollow
+                    - noimageindex
+                    - notranslate
+                    - none
+              - widget: list
+                name: extra
+                label: Extra
+                required: false
+                hint: >-
+                  Additional definition for specific meta tags such as
+                  open-graph, twitter, etc.
+                fields:
+                  - widget: string
+                    name: name
+                    label: Name
+                    required: false
+                    default: ""
+                  - widget: string
+                    name: value
+                    label: Value
+                    required: false
+                    default: ""
+                  - widget: string
+                    name: keyName
+                    label: Key Name
+                    required: false
+                    default: name
+                  - widget: boolean
+                    name: relativeUrl
+                    label: Relative Url
+                    required: false
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: stackbit_page_meta
+          - widget: hidden
+            name: template
+            label: Template
+            required: true
+            default: projects
+  - name: projects
+    label: Projects (posts)
+    folder: src/pages/projects
+    create: true
+    extension: md
+    identifier_field: title
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the project
+      - widget: string
+        name: subtitle
+        label: Subtitle
+        required: false
+        hint: The text shown just below the project title
+      - widget: date
+        name: date
+        label: Date
+        required: true
+      - widget: image
+        name: thumb_img_path
+        label: Image (Blog Feed)
+        required: false
+        hint: The image shown in the blog feed
+      - widget: string
+        name: thumb_img_alt
+        label: Image Alt Text (Blog Feed)
+        required: false
+        hint: The alt text of the blog feed image
+      - widget: image
+        name: content_img_path
+        label: Background Image (Single Project)
+        required: false
+        hint: >-
+          The background image of the left side in the single project. If no image
+          added, the default image specified in Header Configuration is
+          displayed.
+      - widget: string
+        name: excerpt
+        label: Excerpt
+        required: false
+        hint: The excerpt of the project displayed in the feed
+      - widget: boolean
+        name: hide_header
+        label: Hide sidebar
+        required: false
+        default: false
+        hint: Hide the left side in the single project
+      - widget: object
+        name: seo
+        label: Seo
+        required: false
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: false
+            default: ""
+            hint: The page title that goes into the <title> tag
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            default: ""
+            hint: >-
+              The page description that goes into the <meta name="description">
+              tag
+          - widget: list
+            name: robots
+            label: Robots
+            required: false
+            hint: The items that go into the <meta name="robots"> tag
+            field:
+              label: Select
+              name: select
+              widget: select
+              options:
+                - all
+                - index
+                - follow
+                - noindex
+                - nofollow
+                - noimageindex
+                - notranslate
+                - none
+          - widget: list
+            name: extra
+            label: Extra
+            required: false
+            hint: >-
+              Additional definition for specific meta tags such as open-graph,
+              twitter, etc.
+            fields:
+              - widget: string
+                name: name
+                label: Name
+                required: false
+                default: ""
+              - widget: string
+                name: value
+                label: Value
+                required: false
+                default: ""
+              - widget: string
+                name: keyName
+                label: Key Name
+                required: false
+                default: name
+              - widget: boolean
+                name: relativeUrl
+                label: Relative Url
+                required: false
+          - widget: hidden
+            name: type
+            label: Object Type
+            required: true
+            hint: The type of the object
+            default: stackbit_page_meta
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: project
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: template
+      value: project
+  - name: page
+    label: Other pages
+    folder: src/pages
+    create: true
+    extension: md
+    identifier_field: title
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the page
+      - widget: string
+        name: subtitle
+        label: Subtitle
+        required: false
+        hint: The text shown just below the page title
+      - widget: image
+        name: img_path
+        label: Background Image
+        required: false
+        hint: >-
+          The background image of the left side. If no image added, the default
+          image specified in Header Configuration is displayed.
+      - widget: object
+        name: seo
+        label: Seo
+        required: false
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: false
+            default: ""
+            hint: The page title that goes into the <title> tag
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            default: ""
+            hint: >-
+              The page description that goes into the <meta name="description">
+              tag
+          - widget: list
+            name: robots
+            label: Robots
+            required: false
+            hint: The items that go into the <meta name="robots"> tag
+            field:
+              label: Select
+              name: select
+              widget: select
+              options:
+                - all
+                - index
+                - follow
+                - noindex
+                - nofollow
+                - noimageindex
+                - notranslate
+                - none
+          - widget: list
+            name: extra
+            label: Extra
+            required: false
+            hint: >-
+              Additional definition for specific meta tags such as open-graph,
+              twitter, etc.
+            fields:
+              - widget: string
+                name: name
+                label: Name
+                required: false
+                default: ""
+              - widget: string
+                name: value
+                label: Value
+                required: false
+                default: ""
+              - widget: string
+                name: keyName
+                label: Key Name
+                required: false
+                default: name
+              - widget: boolean
+                name: relativeUrl
+                label: Relative Url
+                required: false
+          - widget: hidden
+            name: type
+            label: Object Type
+            required: true
+            hint: The type of the object
+            default: stackbit_page_meta
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: page
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: template
+      value: page

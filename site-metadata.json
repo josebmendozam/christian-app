@@ -50,7 +50,7 @@
       },
       {
         "type": "action",
-        "label": "About",
+        "label": "About me",
         "url": "/about",
         "style": "link"
       }
