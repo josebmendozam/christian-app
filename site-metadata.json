@@ -2,34 +2,6 @@
   "title": "Christian Lorenzo: Personal website",
   "palette": "yellow",
   "header": {
-    "type": "header",
-    "title": "Christian Lorenzo",
-    "tagline": "iOS Developer",
-    "logo_img": "/images/christianlorenzo.png",
-    "logo_img_alt": "Christian Lorenzo",
-    "background_img": "/images/apple_wallpaper.png",
-    "has_nav": true,
-    "nav_links": [
-      {
-        "type": "action",
-        "label": "Blog",
-        "url": "/",
-        "style": "link"
-      },
-      {
-        "type": "action",
-        "label": "Projects",
-        "url": "/projects",
-        "style": "link"
-      },
-      {
-        "type": "action",
-        "label": "About",
-        "url": "/about",
-        "style": "link"
-      }
-    ],
-    "has_social": true,
     "social_links": [
       {
         "type": "action",
@@ -55,11 +27,40 @@
         "icon_class": "linkedin",
         "new_window": true
       }
-    ]
+    ],
+    "tagline": "iOS Developer",
+    "logo_img": "/images/christianlorenzo.png",
+    "has_social": true,
+    "background_img": "/images/apple_wallpaper.png",
+    "title": "Christian Lorenzo",
+    "logo_img_alt": "Christian Lorenzo",
+    "type": "header",
+    "nav_links": [
+      {
+        "type": "action",
+        "label": "Blog",
+        "url": "/",
+        "style": "link"
+      },
+      {
+        "type": "action",
+        "label": "Projects",
+        "url": "/projects",
+        "style": "link"
+      },
+      {
+        "type": "action",
+        "label": "About",
+        "url": "/about",
+        "style": "link"
+      }
+    ],
+    "has_nav": true
   },
   "footer": {
     "type": "footer",
     "content": "2021 &copy; Christian Lorenzo"
   },
-  "domain": "https://magical-sycamore-52f7a.netlify.app"
+  "domain": "https://magical-sycamore-52f7a.netlify.app",
+  "favicon": "/images/favicon.ico"
 }
