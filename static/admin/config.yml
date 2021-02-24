@@ -274,7 +274,7 @@ collections:
                 hint: The type of the object
                 default: footer
   - name: home
-    label: Home / Blog
+    label: Blog (page)
     files:
       - name: home
         label: Home
@@ -370,6 +370,103 @@ collections:
             label: Template
             required: true
             default: home
+  - name: project
+    label: Projects (page)
+    files:
+      - name: project
+        label: Projects
+        file: src/pages/projects.md
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: The title of the page
+          - widget: boolean
+            name: has_more_link
+            label: Show keep reading link
+            required: false
+            default: true
+            hint: Display the keep reading link in the post feed
+          - widget: string
+            name: more_link_text
+            label: Keep reading link label
+            required: false
+          - widget: object
+            name: seo
+            label: Seo
+            required: false
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                default: ""
+                hint: The page title that goes into the <title> tag
+              - widget: string
+                name: description
+                label: Description
+                required: false
+                default: ""
+                hint: >-
+                  The page description that goes into the <meta
+                  name="description"> tag
+              - widget: list
+                name: robots
+                label: Robots
+                required: false
+                hint: The items that go into the <meta name="robots"> tag
+                field:
+                  label: Select
+                  name: select
+                  widget: select
+                  options:
+                    - all
+                    - index
+                    - follow
+                    - noindex
+                    - nofollow
+                    - noimageindex
+                    - notranslate
+                    - none
+              - widget: list
+                name: extra
+                label: Extra
+                required: false
+                hint: >-
+                  Additional definition for specific meta tags such as
+                  open-graph, twitter, etc.
+                fields:
+                  - widget: string
+                    name: name
+                    label: Name
+                    required: false
+                    default: ""
+                  - widget: string
+                    name: value
+                    label: Value
+                    required: false
+                    default: ""
+                  - widget: string
+                    name: keyName
+                    label: Key Name
+                    required: false
+                    default: name
+                  - widget: boolean
+                    name: relativeUrl
+                    label: Relative Url
+                    required: false
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: stackbit_page_meta
+          - widget: hidden
+            name: template
+            label: Template
+            required: true
+            default: projects
   - name: page
     label: Other pages
     folder: src/pages
@@ -479,103 +576,6 @@ collections:
     filter:
       field: template
       value: page
-  - name: project
-    label: Projects (page)
-    files:
-      - name: project
-        label: Projects
-        file: src/pages/projects.md
-        fields:
-          - widget: string
-            name: title
-            label: Title
-            required: true
-            hint: The title of the page
-          - widget: boolean
-            name: has_more_link
-            label: Show keep reading link
-            required: false
-            default: true
-            hint: Display the keep reading link in the post feed
-          - widget: string
-            name: more_link_text
-            label: Keep reading link label
-            required: false
-          - widget: object
-            name: seo
-            label: Seo
-            required: false
-            fields:
-              - widget: string
-                name: title
-                label: Title
-                required: false
-                default: ""
-                hint: The page title that goes into the <title> tag
-              - widget: string
-                name: description
-                label: Description
-                required: false
-                default: ""
-                hint: >-
-                  The page description that goes into the <meta
-                  name="description"> tag
-              - widget: list
-                name: robots
-                label: Robots
-                required: false
-                hint: The items that go into the <meta name="robots"> tag
-                field:
-                  label: Select
-                  name: select
-                  widget: select
-                  options:
-                    - all
-                    - index
-                    - follow
-                    - noindex
-                    - nofollow
-                    - noimageindex
-                    - notranslate
-                    - none
-              - widget: list
-                name: extra
-                label: Extra
-                required: false
-                hint: >-
-                  Additional definition for specific meta tags such as
-                  open-graph, twitter, etc.
-                fields:
-                  - widget: string
-                    name: name
-                    label: Name
-                    required: false
-                    default: ""
-                  - widget: string
-                    name: value
-                    label: Value
-                    required: false
-                    default: ""
-                  - widget: string
-                    name: keyName
-                    label: Key Name
-                    required: false
-                    default: name
-                  - widget: boolean
-                    name: relativeUrl
-                    label: Relative Url
-                    required: false
-              - widget: hidden
-                name: type
-                label: Object Type
-                required: true
-                hint: The type of the object
-                default: stackbit_page_meta
-          - widget: hidden
-            name: template
-            label: Template
-            required: true
-            default: projects
   - name: projects
     label: Projects (posts)
     folder: src/pages/projects
